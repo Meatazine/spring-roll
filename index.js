@@ -9,11 +9,12 @@ var express = require('express')
   , app = new express();
 
 app.use(function (req, res, next) {
-  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Access-Control-Allow-Origin', 'http://meagazine.com');
+  res.set('Access-Control-Allow-Credentials', true);
   next();
 });
 app.use(session({
-  secret: 'muimui good dog'
+  secret: 'muimui'
 }));
 app.use(bodyParser.json());
 
